@@ -1,101 +1,132 @@
 import Image from "next/image";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      <head>
+        <title>Academia do Cérebro | Neurofeedback para TDAH e Ansiedade</title>
+        <meta name="description" content="Soluções em Neurofeedback para TDAH e Ansiedade, com foco no equilíbrio emocional e desenvolvimento cognitivo." />
+      </head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Header */}
+      <header className="bg-blue-900 text-white p-5">
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-2xl md:text-4xl font-bold">Academia do Cérebro</h1>
+          <a href="#contato" className="bg-yellow-500 text-blue-900 px-4 py-2 rounded-md hover:bg-yellow-400 transition duration-300">Pedir Orçamento</a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Home Section */}
+      <section className="bg-gray-100 py-20">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4">Neurofeedback para TDAH e Ansiedade</h2>
+          <p className="text-lg md:text-xl text-gray-600 mb-6">
+            A Academia do Cérebro utiliza técnicas de neurofeedback para ajudar no tratamento de TDAH e ansiedade, promovendo um equilíbrio emocional e cognitivo.
+          </p>
+          <a href="#contato" className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">Saiba Mais</a>
+        </div>
+      </section>
+
+      {/* O que é Neurofeedback Section */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">O que é Neurofeedback?</h2>
+          <p className="text-lg md:text-xl text-gray-600 mb-6">
+            O neurofeedback é uma técnica terapêutica baseada na neuromodulação, onde sensores colocados no couro cabeludo monitoram as ondas cerebrais. Essas informações são processadas e, através de estímulos visuais ou auditivos, o cérebro é incentivado a se autorregular, promovendo melhorias em várias funções cognitivas e emocionais.
+          </p>
+          <p className="text-lg md:text-xl text-gray-600">
+            Essa técnica é utilizada para tratar uma série de condições, como o Transtorno de Déficit de Atenção e Hiperatividade (TDAH), ansiedade, estresse, insônia, entre outros, ajudando a restaurar o equilíbrio cerebral e a qualidade de vida.
+          </p>
+        </div>
+      </section>
+
+      {/* Serviços Section */}
+      <section className="py-20 bg-gray-100">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Nossos Serviços</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para TDAH</h3>
+              <p className="text-gray-600 mt-4">
+                O tratamento de neurofeedback para TDAH ajuda a regular os padrões de atividade cerebral, melhorando o foco e a atenção. Estudos mostram que o uso contínuo dessa técnica pode reduzir a necessidade de medicamentos, aumentando a qualidade de vida de pacientes com TDAH.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para Ansiedade</h3>
+              <p className="text-gray-600 mt-4">
+                O neurofeedback atua diretamente na regulação das ondas cerebrais associadas ao estresse e ansiedade. Ele ajuda o cérebro a encontrar um estado de calma e relaxamento, proporcionando alívio do estresse e reduzindo os sintomas da ansiedade de forma natural.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-2xl font-bold text-blue-900">Treinamento Cognitivo</h3>
+              <p className="text-gray-600 mt-4">
+                Nosso treinamento cognitivo é um programa estruturado em 5 etapas que visa melhorar a memória, atenção e capacidade de resolver problemas. A cada etapa, o paciente é desafiado com atividades que fortalecem diferentes habilidades cognitivas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Treinamento Cognitivo - 5 Etapas */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Etapas do Treinamento Cognitivo</h2>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-2xl font-bold text-blue-900">Etapa 1</h3>
+              <p className="text-gray-600 mt-4">Avaliação cognitiva inicial para identificar áreas de melhoria.</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-2xl font-bold text-blue-900">Etapa 2</h3>
+              <p className="text-gray-600 mt-4">Treinamento focado em melhorar a memória de curto prazo.</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-2xl font-bold text-blue-900">Etapa 3</h3>
+              <p className="text-gray-600 mt-4">Exercícios para aprimorar a concentração e foco.</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-2xl font-bold text-blue-900">Etapa 4</h3>
+              <p className="text-gray-600 mt-4">Desenvolvimento de habilidades de resolução de problemas.</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-2xl font-bold text-blue-900">Etapa 5</h3>
+              <p className="text-gray-600 mt-4">Reavaliação e criação de um plano personalizado de manutenção.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sobre Mim Section */}
+<section className="py-20 bg-gray-100">
+  <div className="container mx-auto text-center">
+    <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Sobre Mim</h2>
+    <p className="text-lg md:text-xl text-gray-600 mb-4">
+      Sou uma especialista em neurofeedback com mais de 10 anos de experiência em ajudar pessoas a alcançarem seu potencial máximo através de técnicas de modulação cerebral.
+    </p>
+    <p className="text-lg md:text-xl text-gray-600 mb-4">
+      Minha missão é proporcionar um ambiente acolhedor e de suporte, onde cada cliente se sinta à vontade para explorar suas capacidades cognitivas e emocionais.
+    </p>
+    <p className="text-lg md:text-xl text-gray-600">
+      Acredito que, através do neurofeedback, é possível transformar vidas, promovendo o bem-estar e a saúde mental de forma duradoura.
+    </p>
+  </div>
+</section>
+
+      {/* Contato Section */}
+      <section id="contato" className="py-20 bg-blue-900 text-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Entre em Contato</h2>
+          <p className="mb-6">Envie uma mensagem para nossa equipe e saiba mais sobre nossos tratamentos.</p>
+          <a href="mailto:contato@academiadocerebro.com" className="bg-yellow-500 text-blue-900 px-6 py-3 rounded-md hover:bg-yellow-400 transition duration-300">Pedir Orçamento</a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-6 text-center">
+        <p>&copy; 2024 Academia do Cérebro - Todos os direitos reservados</p>
       </footer>
     </div>
   );
-}
+};
+
+export default Home;
