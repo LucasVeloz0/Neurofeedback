@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Image from "next/image";
 
 const Home = () => {
@@ -9,12 +10,16 @@ const Home = () => {
       </head>
 
       {/* Header */}
-      <header className="bg-blue-900 text-white p-5">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl md:text-4xl font-bold">Academia do Cérebro</h1>
-          <a href="#contato" className="bg-yellow-500 text-blue-900 px-4 py-2 rounded-md hover:bg-yellow-400 transition duration-300">Pedir Orçamento</a>
-        </div>
-      </header>
+      <div>  <header className="bg-blue-900 text-white p-5">
+          <div className="container mx-auto flex justify-between items-center">
+           {/* Logo */}
+           <div className="flex items-center space-x-4">
+              <Image src="/logo.png" alt="Logo Academia do Cérebro" width={50} height={50} />
+              <h1 className="text-2xl md:text-4xl font-bold">Academia do Cérebro</h1>
+           </div>
+           <a href="#contato" className="bg-yellow-500 text-blue-900 px-4 py-2 rounded-md hover:bg-yellow-400 transition duration-300">Pedir Orçamento</a>
+         </div>
+       </header> </div>
 
       {/* Home Section */}
       <section className="bg-gray-100 py-20">
@@ -26,6 +31,17 @@ const Home = () => {
           <a href="#contato" className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">Saiba Mais</a>
         </div>
       </section>
+
+      {/* Seção de Apresentação com imagem de fundo */}
+<section className="bg-cover bg-center py-32 flex items-end" style={{ backgroundImage: "url('./assets/background.jpeg')", backgroundRepeat: "no-repeat" , minHeight: "100vh",  backgroundSize: "contain"}}>
+  <div className="container mx-auto text-center text-white mb-16">
+    <h2 className="text-3xl md:text-5xl font-bold mb-4">Transforme sua Vida com Neurofeedback</h2>
+    <p className="text-lg md:text-xl mb-6">
+      A Academia do Cérebro oferece tratamentos personalizados para TDAH e Ansiedade, ajudando você a alcançar o equilíbrio mental e emocional.
+    </p>
+    <a href="#sobre-mim" className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">Saiba mais sobre mim</a>
+  </div>
+</section>
 
       {/* O que é Neurofeedback Section */}
       <section className="bg-white py-20">
@@ -97,7 +113,7 @@ const Home = () => {
       </section>
 
       {/* Sobre Mim Section */}
-<section className="py-20 bg-gray-100">
+<section className="py-20 bg-gray-100" id="sobre-mim">
   <div className="container mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Sobre Mim</h2>
     <p className="text-lg md:text-xl text-gray-600 mb-4">
@@ -121,12 +137,30 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Botão flutuante do WhatsApp */}
+<a
+  href="https://wa.me/5511999999999" // Coloque o número de telefone com o código do país e DDD
+  className="fixed bottom-4 right-4  "
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Entre em contato pelo WhatsApp"
+>
+  {/* Imagem do ícone do WhatsApp */}
+  <img
+    src="/assets/whatsapp.svg" // Caminho para o seu ícone SVG na pasta public/assets
+    alt="WhatsApp"
+    className="h-12 w-12"
+  />
+</a>
+
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-6 text-center">
         <p>&copy; 2024 Academia do Cérebro - Todos os direitos reservados</p>
       </footer>
     </div>
   );
+
+  
 };
 
 export default Home;
