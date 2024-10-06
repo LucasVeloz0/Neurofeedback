@@ -4,10 +4,10 @@ import Image from "next/image";
 const Home = () => {
   return (
     <div>
-      <head>
+      <Head>
         <title>Academia do Cérebro | Neurofeedback para TDAH e Ansiedade</title>
         <meta name="description" content="Soluções em Neurofeedback para TDAH e Ansiedade, com foco no equilíbrio emocional e desenvolvimento cognitivo." />
-      </head>
+      </Head>
 
       {/* Header */}
       <div>  <header className="bg-blue-900 text-white p-5">
@@ -145,7 +145,7 @@ const Home = () => {
   aria-label="Entre em contato pelo WhatsApp"
 >
   {/* Imagem do ícone do WhatsApp */}
-  <img
+  <Image
     src="/assets/whatsapp.svg" // Caminho para o seu ícone SVG na pasta public/assets
     alt="WhatsApp"
     className="h-12 w-12"
