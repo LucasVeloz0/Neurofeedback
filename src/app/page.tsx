@@ -13,8 +13,7 @@ const Home = () => {
       <div>  <header className="bg-blue-900 text-white p-5">
           <div className="container mx-auto flex justify-between items-center">
            {/* Logo */}
-           <div className="flex items-center space-x-4">
-              <Image src="/logo.png" alt="Logo Academia do Cérebro" width={50} height={50} />
+           <div className="flex items-center space-x-4">              
               <h1 className="text-2xl md:text-4xl font-bold">Academia do Cérebro</h1>
            </div>
            <a href="#contato" className="bg-yellow-500 text-blue-900 px-4 py-2 rounded-md hover:bg-yellow-400 transition duration-300">Pedir Orçamento</a>
