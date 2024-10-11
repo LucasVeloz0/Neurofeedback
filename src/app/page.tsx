@@ -146,10 +146,11 @@ const Home = () => {
 >
   {/* Imagem do ícone do WhatsApp */}
   <Image
-    src="/assets/whatsapp.svg" // Caminho para o seu ícone SVG na pasta public/assets
-    alt="WhatsApp"
-    className="h-12 w-12"
-  />
+          src="/assets/whatsapp-icon.svg" // Certifique-se de que o ícone SVG está em public/assets
+          alt="WhatsApp"
+          width={48} // Largura do ícone
+          height={48} // Altura do ícone
+        />
 </a>
 
       {/* Footer */}

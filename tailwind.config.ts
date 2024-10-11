@@ -10,10 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         blue: {
-          900: '#1E3A8A',
+          900: '#2E3191',
         },
         yellow: {
-          500: '#FBBF24',
+          500: '#00A551',
         },
       },
     },
