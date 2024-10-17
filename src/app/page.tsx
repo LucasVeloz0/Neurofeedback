@@ -20,38 +20,62 @@ const Home = () => {
          </div>
        </header> </div>
 
+      {/* Banner fixo com efeito parallax 
+      <section
+        className="relative h-80 md:h-96 bg-cover bg-center"
+        style={{
+          backgroundImage: `url('/assets/banner.jpg')`,
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'auto',
+        }}      >
+      </section> */}
+
       {/* Home Section */}
       <section className="bg-gray-100 py-20">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4">Neurofeedback para TDAH e Ansiedade</h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-6">
-            A Academia do Cérebro utiliza técnicas de neurofeedback para ajudar no tratamento de TDAH e ansiedade, promovendo um equilíbrio emocional e cognitivo.
-          </p>
-          <a href="#contato" className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">Saiba Mais</a>
+  <div className="container mx-auto text-center px-4">
+    <h2 className="text-2xl md:text-5xl font-bold text-blue-900 mb-4">Treine Seu Cérebro e Melhore Sua Vida com Neurofeedback</h2>
+    <p className="text-lg md:text-xl text-gray-600 mb-6">
+      Benefícios do Neurofeedback:
+    </p>
+    <ul className="grid grid-cols-1 md:grid-cols-2 text-left mb-6 gap-x-8 gap-y-4">
+      <li className="text-left">● Redução da ansiedade e do estresse</li>
+      <li className="text-left">● Melhora da atenção e foco (especialmente em casos de TDAH)</li>
+      <li className="text-left">● Controle dos sintomas da depressão</li>
+      <li className="text-left">● Aumento da qualidade do sono e redução da insônia</li>
+      <li className="text-left">● Alívio de dores crônicas como enxaqueca e fibromialgia</li>
+    </ul>
+    <a href="#contato" className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
+      Saiba Mais
+    </a>
+  </div>
+</section>
+
+{/* Banner responsivo centralizado */}
+      <section className="relative flex justify-center items-center bg-white py-10">
+        <div className="w-full max-w-7xl mx-auto">
+          <Image
+            src="/assets/banner.jpg"
+            alt="Banner Neurofeedback"
+            layout="responsive"
+            width={1200}
+            height={400}
+            className="rounded-lg"
+          />
         </div>
       </section>
 
-      {/* Seção de Apresentação com imagem de fundo */}
-<section className="bg-cover bg-center py-32 flex items-end" style={{ backgroundImage: "url('./assets/background.jpeg')", backgroundRepeat: "no-repeat" , minHeight: "100vh",  backgroundSize: "contain"}}>
-  <div className="container mx-auto text-center text-white mb-16">
-    <h2 className="text-3xl md:text-5xl font-bold mb-4">Transforme sua Vida com Neurofeedback</h2>
-    <p className="text-lg md:text-xl mb-6">
-      A Academia do Cérebro oferece tratamentos personalizados para TDAH e Ansiedade, ajudando você a alcançar o equilíbrio mental e emocional.
-    </p>
-    <a href="#sobre-mim" className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">Saiba mais sobre mim</a>
-  </div>
-</section>
 
       {/* O que é Neurofeedback Section */}
       <section className="bg-white py-20">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">O que é Neurofeedback?</h2>
           <p className="text-lg md:text-xl text-gray-600 mb-6">
-            O neurofeedback é uma técnica terapêutica baseada na neuromodulação, onde sensores colocados no couro cabeludo monitoram as ondas cerebrais. Essas informações são processadas e, através de estímulos visuais ou auditivos, o cérebro é incentivado a se autorregular, promovendo melhorias em várias funções cognitivas e emocionais.
+          O neurofeedback é uma modalidade terapêutica que utiliza como estratégia a auto-regulação de padrões de atividade cerebral. A atividade cerebral é observada através de parâmetros do eletroencefalograma (EEG), obtido com a disposição de eletrodos em certos pontos da cabeça do paciente. Esses parâmetros são então apresentados ao paciente através de estímulos visuais, auditivos ou tácteis de forma que o paciente voluntariamente altere esses parâmetros em direção a um padrão desejado.
           </p>
           <p className="text-lg md:text-xl text-gray-600">
-            Essa técnica é utilizada para tratar uma série de condições, como o Transtorno de Déficit de Atenção e Hiperatividade (TDAH), ansiedade, estresse, insônia, entre outros, ajudando a restaurar o equilíbrio cerebral e a qualidade de vida.
+          Essa terapia se baseia no princípio de neuroplasticidade cerebral e na capacidade de exames como EEG de registrarem a atividade do cérebro. Boa parte dos protocolos de neurofeedback objetivam suprimir padrões indesejáveis observados no EEG ou aumentar a expressão de padrões desejáveis, o que pode ser alcançado através de treinamento. A forma como os eletrodos são dispostos e os parâmetros de EEG avaliados variam, dependendo do objetivo da terapia.
           </p>
+          
         </div>
       </section>
 
@@ -146,7 +170,7 @@ const Home = () => {
 >
   {/* Imagem do ícone do WhatsApp */}
   <Image
-          src="/assets/whatsapp-icon.svg" // Certifique-se de que o ícone SVG está em public/assets
+          src="/assets/whatsapp.svg" // Certifique-se de que o ícone SVG está em public/assets
           alt="WhatsApp"
           width={48} // Largura do ícone
           height={48} // Altura do ícone
