@@ -1,7 +1,26 @@
+"use client";
+
 import Head from 'next/head';
 import Image from "next/image";
+import { useEffect } from 'react';
 
 const Home = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const revealElements = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+
+      revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) { // 100 pixels antes de chegar no fundo da janela
+          element.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <div>
       <Head>
@@ -10,30 +29,44 @@ const Home = () => {
       </Head>
 
       {/* Header */}
-      <div>  <header className="bg-blue-900 text-white p-5">
-          <div className="container mx-auto flex justify-between items-center">
-           {/* Logo */}
-           <div className="flex items-center space-x-4">              
-              <h1 className="text-2xl md:text-4xl font-bold">Academia do Cérebro</h1>
-           </div>
-           <a href="#contato" className="bg-yellow-500 text-blue-900 px-4 py-2 rounded-md hover:bg-yellow-400 transition duration-300">Pedir Orçamento</a>
-         </div>
-       </header> </div>
+      <div> <header className="bg-white text-blue-900 p-5">
+  <div className="container mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center">
+    {/* Logo */}
+    <div className="flex items-center space-x-4 mb-4 md:mb-0">
+      <img 
+        src="/assets/logo.png" 
+        alt="Logo Academia do Cérebro" 
+        className="w-100 h-100" // Ajuste o tamanho conforme necessário
+      />
+    </div>
 
-      {/* Banner fixo com efeito parallax 
-      <section
-        className="relative h-80 md:h-96 bg-cover bg-center"
-        style={{
-          backgroundImage: `url('/assets/banner.jpg')`,
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'auto',
-        }}      >
-      </section> */}
+    {/* Redes Sociais */}
+    <div className="flex space-x-4">
+      {/* Instagram */}
+      <a href="https://www.instagram.com/grasiele.vaz/" target="_blank" rel="noopener noreferrer">
+        <img 
+          src="/assets/instagram.svg" 
+          alt="Instagram" 
+          className="w-10 h-10" // Ajuste o tamanho conforme necessário
+        />
+      </a>
+      {/* Facebook */}
+      <a href="https://www.facebook.com/grasiele.vaz/" target="_blank" rel="noopener noreferrer">
+        <img 
+          src="/assets/facebook.svg" 
+          alt="Facebook" 
+          className="w-10 h-10" // Ajuste o tamanho conforme necessário
+        />
+      </a>
+    </div>
+  </div>
+</header> </div>
+
 
       {/* Home Section */}
       <section className="bg-gray-100 py-20">
   <div className="container mx-auto text-center px-4">
-    <h2 className="text-2xl md:text-5xl font-bold text-blue-900 mb-4">Treine Seu Cérebro e Melhore Sua Vida com Neurofeedback</h2>
+    <h1 className="text-2xl md:text-5xl font-bold text-blue-900 mb-4">Treine Seu Cérebro e Melhore Sua Vida com Neurofeedback</h1>
     <p className="text-lg md:text-xl text-gray-600 mb-6">
       Benefícios do Neurofeedback:
     </p>
@@ -51,14 +84,14 @@ const Home = () => {
 </section>
 
 {/* Banner responsivo centralizado */}
-      <section className="relative flex justify-center items-center bg-white py-10">
+      <section className="relative flex justify-center items-center bg-white py-10 reveal">
         <div className="w-full max-w-7xl mx-auto">
           <Image
             src="/assets/banner.jpg"
             alt="Banner Neurofeedback"
             layout="responsive"
             width={1200}
-            height={400}
+            height={600}
             className="rounded-lg"
           />
         </div>
@@ -66,7 +99,7 @@ const Home = () => {
 
 
       {/* O que é Neurofeedback Section */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-20 reveal">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">O que é Neurofeedback?</h2>
           <p className="text-lg md:text-xl text-gray-600 mb-6">
@@ -86,7 +119,7 @@ const Home = () => {
       </section>
 
         {/* Sobre Mim Section */}
-<section className="relative bg-white">
+<section className="relative bg-white reveal">
   {/* Parte superior com fundo branco (20%) */}
   <div className="h-20 bg-white"></div>
   
@@ -97,17 +130,29 @@ const Home = () => {
       {/* Imagem Centralizada */}
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <img 
-          src="/assets/happy.png" 
+          src="/assets/sobre.jpg" 
           alt="Sua Foto"
           className="w-40 h-40 rounded-full border-4 border-white shadow-lg"
         />
       </div>
 
       {/* Conteúdo da Seção */}
-      <div className="pt-40">
+      <div className="pt-20 reveal">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Sobre Mim</h2>
-        <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
-          Sou especialista em Neurofeedback e Psicanálise, com vasta experiência em ajudar pessoas a melhorar suas vidas. Minha abordagem personalizada busca tratar questões de saúde mental, ajudando meus pacientes a alcançar bem-estar e equilíbrio emocional.
+        <p className="text-lg md:text-xl text-white max-w-4xl mx-auto mb-4">
+        Sou psicanalista clínica, atuo com especialização infantil, aplicadora ABA, TCC, Hipnose clínica, e atualmente trouxe para o consultório uma técnica muito inovadora do Neurofeedback, neuromodulação para diversas áreas, principalmente transtorno neurológico, autismo, TDAH, Tod, bipolaridade, depressão, vícios e manias, entre muitas áreas que posso contribuir para tratamento dos pacientes em sofrimento.
+        </p>
+        <p className="text-lg md:text-xl text-white max-w-3xl mx-auto text-left">
+        ● Neurociência Clinica Terapêutica - Instituo Croco
+        </p>
+        <p className="text-lg md:text-xl text-white max-w-3xl mx-auto text-left">
+        ● Aplicadora ABA no Autismo - Instituto Applied Behavior Analysis
+        </p>
+        <p className="text-lg md:text-xl text-white max-w-3xl mx-auto text-left">
+        ● TCC Terapia Cognitiva Comportamental - Instituto Croco
+        </p>
+        <p className="text-lg md:text-xl text-white max-w-3xl mx-auto text-left">
+        ● Especialista em Neurofeedback Neurowork
         </p>
       </div>
     </div>
@@ -115,23 +160,23 @@ const Home = () => {
 </section>
 
         {/* Serviços auxiliares */}
-<section className="py-20 bg-gray-100">
+        <section className="py-20 bg-gray-100 reveal">
   <div className="container mx-auto">
     <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Terapias auxiliares</h2>
-    <p className='text-lg md:text-xl text-gray-600 mb-6'>
-      Para melhorar seus resultados além do Neurofeedback, oferecemos dois tratamentos complementares que podem potencializar seus resultados:
+    <p className="text-lg md:text-xl text-gray-600 mb-6 text-center">
+      Para melhorar seus resultados além do Neurofeedback, oferecemos tratamentos complementares que podem potencializar seus resultados:
     </p>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {/* Serviço 1: Laserterapia Sistêmica – ILIB */}
-      <div className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col md:flex-row">
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col">
         {/* Imagem Laserterapia */}
-        <div className="md:w-1/3 mb-6 md:mb-0">
-          <img src="./assets/happy.png" alt="Laserterapia ILIB" className="rounded-md w-full h-auto object-cover" />
+        <div className="w-full mb-6">
+          <img src="./assets/ilib.jpg" alt="Laserterapia ILIB" className="rounded-md w-full h-auto object-cover" />
         </div>
         {/* Descrição Laserterapia */}
-        <div className="md:w-2/3 md:pl-6">
-          <h3 className="text-2xl font-bold text-blue-900">Laserterapia Sistêmica – ILIB</h3>
+        <div className="w-full">
+          <h3 className="text-2xl font-bold text-blue-900 text-center">Laserterapia Sistêmica – ILIB</h3>
           <p className="text-gray-600 mt-4">
             A laserterapia sistêmica, também conhecida como ILIB (Intravascular Laser Irradiation of Blood), é uma técnica terapêutica inovadora que utiliza a luz laser para irradiar o sangue, promovendo o bem-estar geral do organismo.
           </p>
@@ -143,26 +188,22 @@ const Home = () => {
             <li>● Redução do risco de trombose;</li>
             <li>● Efeito antioxidante;</li>
           </ul>
-          {/* Chama de ação */}
-          <a href="https://wa.me/15999999999?text=Olá! Gostaria de saber mais sobre a Laserterapia Sistêmica – ILIB." className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
+          <a href="https://wa.me/+5515996293318?text=Olá! Gostaria de saber mais sobre a Laserterapia Sistêmica – ILIB." className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
             Saiba Mais sobre Laserterapia
           </a>
         </div>
       </div>
 
       {/* Serviço 2: Faixa de Fotobiomodulação */}
-      <div className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col md:flex-row">
-        {/* Imagem Fotobiomodulação */}
-        <div className="md:w-1/3 mb-6 md:mb-0">
-          <img src="/assets/happy.png" alt="Faixa de Fotobiomodulação" className="rounded-md w-full h-auto object-cover" />
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col">
+        <div className="w-full mb-6">
+          <img src="/assets/fotobio.jpg" alt="Faixa de Fotobiomodulação" className="rounded-md w-full h-auto object-cover" />
         </div>
-        {/* Descrição Fotobiomodulação */}
-        <div className="md:w-2/3 md:pl-6">
-          <h3 className="text-2xl font-bold text-blue-900">Faixa de Fotobiomodulação</h3>
+        <div className="w-full">
+          <h3 className="text-2xl font-bold text-blue-900 text-center">Faixa de Fotobiomodulação</h3>
           <p className="text-gray-600 mt-4">
             A faixa de fotobiomodulação intracraniana é um dispositivo inovador que utiliza luz de baixa intensidade para estimular o cérebro de forma não invasiva, promovendo melhorias em diversas funções cerebrais.
           </p>
-          <p className="text-gray-600 mt-4">A luz interage com as células cerebrais, estimulando reações bioquímicas benéficas, como aumento de ATP, redução da inflamação e estimulação da neurogênese.</p>
           <ul className="text-gray-600 mt-4 space-y-2">
             <li>● Melhora dos sintomas de depressão e ansiedade;</li>
             <li>● Alívio da dor crônica, como enxaqueca;</li>
@@ -170,9 +211,32 @@ const Home = () => {
             <li>● Tratamento de lesões cerebrais;</li>
             <li>● Prevenção do declínio cognitivo;</li>
           </ul>
-          {/* Chama de ação */}
-          <a href="https://wa.me/15999999999?text=Olá! Gostaria de saber mais sobre a Faixa de Fotobiomodulação." className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
+          <a href="https://wa.me/+5515996293318?text=Olá! Gostaria de saber mais sobre a Faixa de Fotobiomodulação." className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
             Saiba Mais sobre Fotobiomodulação
+          </a>
+        </div>
+      </div>
+
+      {/* Serviço 3: Estimulação Transcraniana por Corrente Contínua (tDCS) */}
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col">
+        {/* Descrição tDCS */}
+        <div className="w-full">
+          <h3 className="text-2xl font-bold text-blue-900 text-center">Estimulação Transcraniana por Corrente Contínua (tDCS)</h3>
+          <p className="text-gray-600 mt-4">
+            A Estimulação Transcraniana por Corrente Contínua (tDCS) é uma técnica não invasiva de neuromodulação que utiliza correntes elétricas de baixa intensidade para estimular regiões específicas do cérebro. Cada vez mais reconhecida no campo da neurociência e da saúde mental, a tDCS oferece uma abordagem inovadora para o tratamento de diversas condições neurológicas e psicológicas, além de potencializar funções cognitivas.
+          </p>
+          <p className="text-gray-600 mt-4">
+            Durante a aplicação, eletrodos são colocados na superfície do couro cabeludo, permitindo a passagem de uma corrente contínua que altera a excitabilidade neuronal. Essa modulação elétrica pode aumentar ou diminuir a atividade das células nervosas, influenciando processos cognitivos e emocionais.
+          </p>
+          <ul className="text-gray-600 mt-4 space-y-2">
+            <li>● Melhoria da função cognitiva: A tDCS pode aumentar a atenção, a memória e a capacidade de aprendizado.</li>
+            <li>● Alívio de sintomas de depressão e ansiedade;</li>
+            <li>● Tratamento da dor crônica;</li>
+            <li>● Recuperação de lesões cerebrais;</li>
+            <li>● Prevenção do declínio cognitivo;</li>
+          </ul>
+          <a href="https://wa.me/+5515996293318?text=Olá! Gostaria de saber mais sobre a tDCS." className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
+            Saiba Mais sobre tDCS
           </a>
         </div>
       </div>
@@ -181,14 +245,14 @@ const Home = () => {
 </section>
 
       {/* Serviços Section */}
-      <section className="py-20 bg-gray-100">
+      <section className="py-20 bg-gray-100 reveal">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Nossos Serviços</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
               <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para TDAH</h3>
               <p className="text-gray-600 mt-4">
-                O tratamento de neurofeedback para TDAH ajuda a regular os padrões de atividade cerebral, melhorando o foco e a atenção. Estudos mostram que o uso contínuo dessa técnica pode reduzir a necessidade de medicamentos, aumentando a qualidade de vida de pacientes com TDAH.
+              O tratamento de neurofeedback para TDAH ajuda a regular os padrões de atividade cerebral, melhorando o foco e a atenção. Estudos mostram que o uso contínuo dessa técnica pode reduzir a necessidade de medicamentos, aumentando a qualidade de vida de pacientes com TDAH.
               </p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
@@ -198,9 +262,21 @@ const Home = () => {
               </p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para Autismo</h3>
+              <p className="text-gray-600 mt-4">
+              O tratamento de neurofeedback tem se mostrado promissor para indivíduos no espectro autista, ajudando a regular a atividade cerebral e a melhorar as habilidades sociais e de comunicação. Ao treinar o cérebro para otimizar suas ondas cerebrais, o neurofeedback pode contribuir para um maior controle emocional e redução de comportamentos desafiadores, promovendo uma melhor qualidade de vida e interação social para aqueles com autismo.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para Depressão</h3>
+              <p className="text-gray-600 mt-4">
+              O neurofeedback é uma abordagem eficaz no tratamento da depressão, focando na regulação das ondas cerebrais associadas ao humor. Essa técnica ajuda a restaurar o equilíbrio emocional, permitindo que o cérebro encontre um estado de bem-estar e otimismo. Com sessões regulares, muitos pacientes relatam uma diminuição significativa nos sintomas depressivos, proporcionando uma alternativa natural e não invasiva ao tratamento convencional.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
               <h3 className="text-2xl font-bold text-blue-900">Treinamento Cognitivo</h3>
               <p className="text-gray-600 mt-4">
-                Nosso treinamento cognitivo é um programa estruturado em 5 etapas que visa melhorar a memória, atenção e capacidade de resolver problemas. A cada etapa, o paciente é desafiado com atividades que fortalecem diferentes habilidades cognitivas.
+                Nosso treinamento cognitivo é um programa estruturado em 3 etapas que visa melhorar a memória, atenção e capacidade de resolver problemas. A cada etapa, o paciente é desafiado com atividades que fortalecem diferentes habilidades cognitivas.
               </p>
             </div>
           </div>
@@ -208,7 +284,7 @@ const Home = () => {
       </section>
 
       {/* O Que Meus Pacientes Dizem */}
-<section className="py-20 bg-white">
+<section className="py-20 bg-white reveal">
   <div className="container mx-auto">
     <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">O Que Meus Pacientes Dizem:</h2>
     <p className="text-lg md:text-xl text-center text-gray-600 mb-10">
@@ -218,47 +294,39 @@ const Home = () => {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Avaliação 1 */}
       <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-        <img src="/assets/happy.png" alt="Avaliação do Google 1" className="w-full h-auto object-cover rounded-md mb-4" />
+        <img src="/assets/avaliacao3.jpeg" alt="Avaliação do Google 1" className="w-full h-auto object-cover rounded-md mb-4" />
       </div>
 
       {/* Avaliação 2 */}
       <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-        <img src="/assets/happy.png" alt="Avaliação do Google 2" className="w-full h-auto object-cover rounded-md mb-4" />
+        <img src="/assets/avaliacao2.jpeg" alt="Avaliação do Google 2" className="w-full h-auto object-cover rounded-md mb-4" />
       </div>
 
       {/* Avaliação 3 */}
       <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-        <img src="/assets/happy.png" alt="Avaliação do Google 3" className="w-full h-auto object-cover rounded-md mb-4" />
+        <img src="/assets/avaliacao1.jpeg" alt="Avaliação do Google 3" className="w-full h-auto object-cover rounded-md mb-4" />
       </div>
     </div>
   </div>
 </section>
 
-      {/* Treinamento Cognitivo - 5 Etapas */}
-      <section className="py-20 bg-white">
+      {/* Treinamento Cognitivo - 3 Etapas */}
+      <section className="py-20 bg-white reveal">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Etapas do Treinamento Cognitivo</h2>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
               <h3 className="text-2xl font-bold text-blue-900">Etapa 1</h3>
-              <p className="text-gray-600 mt-4">Avaliação cognitiva inicial para identificar áreas de melhoria.</p>
+              <p className="text-gray-600 mt-4">É feito a análise reunindo históricos e objetivos pessoais a serem alcançados</p>
             </div>
             <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
               <h3 className="text-2xl font-bold text-blue-900">Etapa 2</h3>
-              <p className="text-gray-600 mt-4">Treinamento focado em melhorar a memória de curto prazo.</p>
+              <p className="text-gray-600 mt-4">Conhecer o padrão de funcionamento do cérebro em tempo real e suas frequências predominantes, conectividades e sincronia. </p>
             </div>
             <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
               <h3 className="text-2xl font-bold text-blue-900">Etapa 3</h3>
-              <p className="text-gray-600 mt-4">Exercícios para aprimorar a concentração e foco.</p>
-            </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-2xl font-bold text-blue-900">Etapa 4</h3>
-              <p className="text-gray-600 mt-4">Desenvolvimento de habilidades de resolução de problemas.</p>
-            </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-2xl font-bold text-blue-900">Etapa 5</h3>
-              <p className="text-gray-600 mt-4">Reavaliação e criação de um plano personalizado de manutenção.</p>
-            </div>
+              <p className="text-gray-600 mt-4">Condicionando o cérebro com sessões semanais ensinando a corrigir atividades motoras e deficitárias, organizando sua fisiologia, aprimorando o funcionamento em busca de maior eficiência e bem estar.</p>
+            </div>           
           </div>
         </div>
       </section>  
@@ -285,18 +353,42 @@ const Home = () => {
   </div>
 </section>
 
-      {/* Contato Section */}
-      <section id="contato" className="py-20 bg-blue-900 text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Entre em Contato</h2>
-          <p className="mb-6">Envie uma mensagem para nossa equipe e saiba mais sobre nossos tratamentos.</p>
-          <a href="mailto:contato@academiadocerebro.com" className="bg-yellow-500 text-blue-900 px-6 py-3 rounded-md hover:bg-yellow-400 transition duration-300">Pedir Orçamento</a>
-        </div>
-      </section>
+{/* Contato Section */}
+<section id="contato" className="py-20 bg-blue-900 text-white reveal">
+  <div className="container mx-auto text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-6">Entre em Contato</h2>
+    <p className="mb-6">Envie uma mensagem para nossa equipe e saiba mais sobre nossos tratamentos.</p>
+    
+    {/* Botão para WhatsApp */}
+    <a href="https://wa.me/15999999999?text=Olá! Gostaria de saber mais sobre os tratamentos." className="bg-yellow-500 text-blue-900 px-6 py-3 rounded-md hover:bg-yellow-400 transition duration-300">
+      Pedir Orçamento
+    </a>
+
+    {/* Redes Sociais */}
+    <div className="mt-6 flex justify-center space-x-4">
+      {/* Instagram */}
+      <a href="https://www.instagram.com/grasiele.vaz/" target="_blank" rel="noopener noreferrer">
+        <img 
+          src="/assets/instagram.svg" 
+          alt="Instagram" 
+          className="w-10 h-10" // Ajuste o tamanho conforme necessário
+        />
+      </a>
+      {/* Facebook */}
+      <a href="https://www.facebook.com/grasiele.vaz/" target="_blank" rel="noopener noreferrer">
+        <img 
+          src="/assets/facebook.svg" 
+          alt="Facebook" 
+          className="w-10 h-10" // Ajuste o tamanho conforme necessário
+        />
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* Botão flutuante do WhatsApp */}
 <a
-  href="https://wa.me/5511999999999" // Coloque o número de telefone com o código do país e DDD
+  href="https://wa.me/+5515996293318" // Coloque o número de telefone com o código do país e DDD
   className="fixed bottom-4 right-4  "
   target="_blank"
   rel="noopener noreferrer"
@@ -306,8 +398,8 @@ const Home = () => {
   <Image
           src="/assets/whatsapp.svg" // Certifique-se de que o ícone SVG está em public/assets
           alt="WhatsApp"
-          width={48} // Largura do ícone
-          height={48} // Altura do ícone
+          width={36} // Largura do ícone
+          height={36} // Altura do ícone
         />
 </a>
 
