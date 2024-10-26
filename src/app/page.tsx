@@ -30,7 +30,7 @@ const Home = () => {
 
       {/* Header */}
       <div> <header className="bg-white text-blue-900 p-5">
-  <div className="container mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center">
+  <div className="container mx-auto flex flex-col md:flex-row justify-center  items-center">
     {/* Logo */}
     <div className="flex items-center space-x-4 mb-4 md:mb-0">
       <img 
@@ -47,7 +47,7 @@ const Home = () => {
         <img 
           src="/assets/instagram.svg" 
           alt="Instagram" 
-          className="w-10 h-10" // Ajuste o tamanho conforme necessário
+          className="w-8 h-8" // Ajuste o tamanho conforme necessário
         />
       </a>
       {/* Facebook */}
@@ -55,7 +55,7 @@ const Home = () => {
         <img 
           src="/assets/facebook.svg" 
           alt="Facebook" 
-          className="w-10 h-10" // Ajuste o tamanho conforme necessário
+          className="w-8 h-8" // Ajuste o tamanho conforme necessário
         />
       </a>
     </div>
@@ -102,10 +102,10 @@ const Home = () => {
       <section className="bg-white py-20 reveal">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">O que é Neurofeedback?</h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-6">
+          <p className="text-lg md:text-xl text-gray-600 mb-6 p-8">
           O neurofeedback é uma modalidade terapêutica que utiliza como estratégia a auto-regulação de padrões de atividade cerebral. A atividade cerebral é observada através de parâmetros do eletroencefalograma (EEG), obtido com a disposição de eletrodos em certos pontos da cabeça do paciente. Esses parâmetros são então apresentados ao paciente através de estímulos visuais, auditivos ou tácteis de forma que o paciente voluntariamente altere esses parâmetros em direção a um padrão desejado.
           </p>
-          <p className="text-lg md:text-xl text-gray-600 mb-10">
+          <p className="text-lg md:text-xl text-gray-600 mb-10 p-8">
           Essa terapia se baseia no princípio de neuroplasticidade cerebral e na capacidade de exames como EEG de registrarem a atividade do cérebro. Boa parte dos protocolos de neurofeedback objetivam suprimir padrões indesejáveis observados no EEG ou aumentar a expressão de padrões desejáveis, o que pode ser alcançado através de treinamento. A forma como os eletrodos são dispostos e os parâmetros de EEG avaliados variam, dependendo do objetivo da terapia.
           </p>
           <a href="#contato" className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
@@ -124,7 +124,7 @@ const Home = () => {
   <div className="h-20 bg-white"></div>
   
   {/* Parte inferior com fundo verde (80%) */}
-  <div className="bg-green-600 h-100 relative">
+  <div className="bg-green-600 h-100 p-8 relative rounded-lg mx-4 lg:mx-24">
     <div className="container mx-auto text-center px-4">
       
       {/* Imagem Centralizada */}
@@ -159,15 +159,15 @@ const Home = () => {
   </div>
 </section>
 
-        {/* Serviços auxiliares */}
-        <section className="py-20 bg-gray-100 reveal">
+{/* Serviços auxiliares */}
+<section className="py-20 bg-gray-100 reveal rounded-lg overflow-hidden shadow-md">
   <div className="container mx-auto">
     <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Terapias auxiliares</h2>
     <p className="text-lg md:text-xl text-gray-600 mb-6 text-center">
       Para melhorar seus resultados além do Neurofeedback, oferecemos tratamentos complementares que podem potencializar seus resultados:
     </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Serviço 1: Laserterapia Sistêmica – ILIB */}
       <div className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col">
         {/* Imagem Laserterapia */}
@@ -188,7 +188,7 @@ const Home = () => {
             <li>● Redução do risco de trombose;</li>
             <li>● Efeito antioxidante;</li>
           </ul>
-          <a href="https://wa.me/+5515996293318?text=Olá! Gostaria de saber mais sobre a Laserterapia Sistêmica – ILIB." className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
+          <a href="https://wa.me/+5515996293318?text=Olá! Gostaria de saber mais sobre a Laserterapia Sistêmica – ILIB." target="_blank" className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
             Saiba Mais sobre Laserterapia
           </a>
         </div>
@@ -211,7 +211,7 @@ const Home = () => {
             <li>● Tratamento de lesões cerebrais;</li>
             <li>● Prevenção do declínio cognitivo;</li>
           </ul>
-          <a href="https://wa.me/+5515996293318?text=Olá! Gostaria de saber mais sobre a Faixa de Fotobiomodulação." className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
+          <a href="https://wa.me/+5515996293318?text=Olá! Gostaria de saber mais sobre a Faixa de Fotobiomodulação." target="_blank" className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
             Saiba Mais sobre Fotobiomodulação
           </a>
         </div>
@@ -235,7 +235,7 @@ const Home = () => {
             <li>● Recuperação de lesões cerebrais;</li>
             <li>● Prevenção do declínio cognitivo;</li>
           </ul>
-          <a href="https://wa.me/+5515996293318?text=Olá! Gostaria de saber mais sobre a tDCS." className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
+          <a href="https://wa.me/+5515996293318?text=Olá! Gostaria de saber mais sobre a tDCS." target="_blank" className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
             Saiba Mais sobre tDCS
           </a>
         </div>
@@ -244,46 +244,46 @@ const Home = () => {
   </div>
 </section>
 
-      {/* Serviços Section */}
-      <section className="py-20 bg-gray-100 reveal">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Nossos Serviços</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para TDAH</h3>
-              <p className="text-gray-600 mt-4">
-              O tratamento de neurofeedback para TDAH ajuda a regular os padrões de atividade cerebral, melhorando o foco e a atenção. Estudos mostram que o uso contínuo dessa técnica pode reduzir a necessidade de medicamentos, aumentando a qualidade de vida de pacientes com TDAH.
-              </p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para Ansiedade</h3>
-              <p className="text-gray-600 mt-4">
-                O neurofeedback atua diretamente na regulação das ondas cerebrais associadas ao estresse e ansiedade. Ele ajuda o cérebro a encontrar um estado de calma e relaxamento, proporcionando alívio do estresse e reduzindo os sintomas da ansiedade de forma natural.
-              </p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para Autismo</h3>
-              <p className="text-gray-600 mt-4">
-              O tratamento de neurofeedback tem se mostrado promissor para indivíduos no espectro autista, ajudando a regular a atividade cerebral e a melhorar as habilidades sociais e de comunicação. Ao treinar o cérebro para otimizar suas ondas cerebrais, o neurofeedback pode contribuir para um maior controle emocional e redução de comportamentos desafiadores, promovendo uma melhor qualidade de vida e interação social para aqueles com autismo.
-              </p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para Depressão</h3>
-              <p className="text-gray-600 mt-4">
-              O neurofeedback é uma abordagem eficaz no tratamento da depressão, focando na regulação das ondas cerebrais associadas ao humor. Essa técnica ajuda a restaurar o equilíbrio emocional, permitindo que o cérebro encontre um estado de bem-estar e otimismo. Com sessões regulares, muitos pacientes relatam uma diminuição significativa nos sintomas depressivos, proporcionando uma alternativa natural e não invasiva ao tratamento convencional.
-              </p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-2xl font-bold text-blue-900">Treinamento Cognitivo</h3>
-              <p className="text-gray-600 mt-4">
-                Nosso treinamento cognitivo é um programa estruturado em 3 etapas que visa melhorar a memória, atenção e capacidade de resolver problemas. A cada etapa, o paciente é desafiado com atividades que fortalecem diferentes habilidades cognitivas.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+{/* Serviços Section */}
+<section className="py-20 bg-gray-100 reveal rounded-lg">
+  <div className="container mx-auto">
+    <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Nossos Serviços</h2>
+    <div className="flex flex-wrap justify-between p-6">
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center w-full md:w-1/3 mb-8">
+        <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para TDAH</h3>
+        <p className="text-gray-600 mt-4">
+          O tratamento de neurofeedback para TDAH ajuda a regular os padrões de atividade cerebral, melhorando o foco e a atenção. Estudos mostram que o uso contínuo dessa técnica pode reduzir a necessidade de medicamentos, aumentando a qualidade de vida de pacientes com TDAH.
+        </p>
+      </div>
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center w-full md:w-1/3 mb-8">
+        <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para Ansiedade</h3>
+        <p className="text-gray-600 mt-4">
+          O neurofeedback atua diretamente na regulação das ondas cerebrais associadas ao estresse e ansiedade. Ele ajuda o cérebro a encontrar um estado de calma e relaxamento, proporcionando alívio do estresse e reduzindo os sintomas da ansiedade de forma natural.
+        </p>
+      </div>
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center w-full md:w-1/3 mb-8">
+        <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para Autismo</h3>
+        <p className="text-gray-600 mt-4">
+          O tratamento de neurofeedback tem se mostrado promissor para indivíduos no espectro autista, ajudando a regular a atividade cerebral e a melhorar as habilidades sociais e de comunicação. Ao treinar o cérebro para otimizar suas ondas cerebrais, o neurofeedback pode contribuir para um maior controle emocional e redução de comportamentos desafiadores, promovendo uma melhor qualidade de vida e interação social para aqueles com autismo.
+        </p>
+      </div>
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center w-full md:w-1/3 mb-8">
+        <h3 className="text-2xl font-bold text-blue-900">Neurofeedback para Depressão</h3>
+        <p className="text-gray-600 mt-4">
+          O neurofeedback é uma abordagem eficaz no tratamento da depressão, focando na regulação das ondas cerebrais associadas ao humor. Essa técnica ajuda a restaurar o equilíbrio emocional, permitindo que o cérebro encontre um estado de bem-estar e otimismo. Com sessões regulares, muitos pacientes relatam uma diminuição significativa nos sintomas depressivos, proporcionando uma alternativa natural e não invasiva ao tratamento convencional.
+        </p>
+      </div>
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center w-full md:w-1/3 mb-8">
+        <h3 className="text-2xl font-bold text-blue-900">Treinamento Cognitivo</h3>
+        <p className="text-gray-600 mt-4">
+          Nosso treinamento cognitivo é um programa estruturado em 3 etapas que visa melhorar a memória, atenção e capacidade de resolver problemas. A cada etapa, o paciente é desafiado com atividades que fortalecem diferentes habilidades cognitivas.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* O Que Meus Pacientes Dizem */}
+{/* O Que Meus Pacientes Dizem */}
 <section className="py-20 bg-white reveal">
   <div className="container mx-auto">
     <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">O Que Meus Pacientes Dizem:</h2>
@@ -293,18 +293,48 @@ const Home = () => {
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Avaliação 1 */}
-      <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-        <img src="/assets/avaliacao3.jpeg" alt="Avaliação do Google 1" className="w-full h-auto object-cover rounded-md mb-4" />
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md flex items-start">
+        <img
+          src="/assets/paciente1.png"
+          alt="Paciente 1"
+          className="w-16 h-16 object-cover rounded-full mr-4" // Tamanho da foto
+        />
+        <div>
+          <h4 className="font-bold text-blue-900">Tatiana Wergennes</h4>
+          <p className="text-gray-600 mt-2">
+          Experiência muito satisfatória, com certeza vale muito a pena ter a orientação de alguém que tem propriedade e conhecimento na área. A Dra Grasiele Vaz meu agradecimento pela dedicação com meu filho 🙏          </p>
+        </div>
       </div>
 
       {/* Avaliação 2 */}
-      <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-        <img src="/assets/avaliacao2.jpeg" alt="Avaliação do Google 2" className="w-full h-auto object-cover rounded-md mb-4" />
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md flex items-start">
+        <img
+          src="/assets/paciente2.png"
+          alt="Paciente 2"
+          className="w-16 h-16 object-cover rounded-full mr-4" // Tamanho da foto
+        />
+        <div>
+          <h4 className="font-bold text-blue-900">Francine Michelin</h4>
+          <p className="text-gray-600 mt-2">
+          Uma profissional excepcional!
+Atenciosa, tem muita propriedade e conhecimento na área e pronta para ajudar.
+Na entrevista com os pais foi muito solicita, demonstrou conhecimento profundo sobre nossa queixa que até parecia estar descrevendo nosso filho sem ao menos conhecê-lo.
+Também é uma pessoa amável com as crianças, fazendo-as confiar nela e em seu propósito.          </p>
+        </div>
       </div>
 
       {/* Avaliação 3 */}
-      <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-        <img src="/assets/avaliacao1.jpeg" alt="Avaliação do Google 3" className="w-full h-auto object-cover rounded-md mb-4" />
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md flex items-start">
+        <img
+          src="/assets/paciente3.png"
+          alt="Paciente 3"
+          className="w-16 h-16 object-cover rounded-full mr-4" // Tamanho da foto
+        />
+        <div>
+          <h4 className="font-bold text-blue-900">Priscila Marins</h4>
+          <p className="text-gray-600 mt-2">
+          Uma excelente profissional, mostrou profundo conhecimento no que faz, além de bastante atenciosa. Recomendo com empenho ⭐️          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -360,7 +390,7 @@ const Home = () => {
     <p className="mb-6">Envie uma mensagem para nossa equipe e saiba mais sobre nossos tratamentos.</p>
     
     {/* Botão para WhatsApp */}
-    <a href="https://wa.me/15999999999?text=Olá! Gostaria de saber mais sobre os tratamentos." className="bg-yellow-500 text-blue-900 px-6 py-3 rounded-md hover:bg-yellow-400 transition duration-300">
+    <a href="https://wa.me/15999999999?text=Olá! Gostaria de saber mais sobre os tratamentos."  target="_blank" className="bg-yellow-500 text-blue-900 px-6 py-3 rounded-md hover:bg-yellow-400 transition duration-300">
       Pedir Orçamento
     </a>
 
@@ -382,6 +412,14 @@ const Home = () => {
           className="w-10 h-10" // Ajuste o tamanho conforme necessário
         />
       </a>
+        {/* E-mail */}
+<a href="mailto:grasielevaz22@gmail.com" target="_blank" rel="noopener noreferrer">
+  <img 
+    src="/assets/email.svg" 
+    alt="E-mail" 
+    className="w-12 h-10" // Ajuste o tamanho conforme necessário
+  />
+</a>
     </div>
   </div>
 </section>
