@@ -47,7 +47,7 @@ const Home = () => {
         <img 
           src="/assets/instagram.svg" 
           alt="Instagram" 
-          className="w-8 h-8" // Ajuste o tamanho conforme necessário
+          className="w-6 h-6" // Ajuste o tamanho conforme necessário
         />
       </a>
       {/* Facebook */}
@@ -55,7 +55,7 @@ const Home = () => {
         <img 
           src="/assets/facebook.svg" 
           alt="Facebook" 
-          className="w-8 h-8" // Ajuste o tamanho conforme necessário
+          className="w-6 h-6" // Ajuste o tamanho conforme necessário
         />
       </a>
     </div>
@@ -99,13 +99,13 @@ const Home = () => {
 
 
       {/* O que é Neurofeedback Section */}
-      <section className="bg-white py-20 reveal">
+      <section className="bg-white py-14 reveal">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">O que é Neurofeedback?</h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-6 p-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6 text-center">O que é Neurofeedback?</h2>
+          <p className="text-left text-lg md:text-xl text-gray-600  p-6">
           O neurofeedback é uma modalidade terapêutica que utiliza como estratégia a auto-regulação de padrões de atividade cerebral. A atividade cerebral é observada através de parâmetros do eletroencefalograma (EEG), obtido com a disposição de eletrodos em certos pontos da cabeça do paciente. Esses parâmetros são então apresentados ao paciente através de estímulos visuais, auditivos ou tácteis de forma que o paciente voluntariamente altere esses parâmetros em direção a um padrão desejado.
           </p>
-          <p className="text-lg md:text-xl text-gray-600 mb-10 p-8">
+          <p className="text-left text-lg md:text-xl text-gray-600 mb-10 p-4">
           Essa terapia se baseia no princípio de neuroplasticidade cerebral e na capacidade de exames como EEG de registrarem a atividade do cérebro. Boa parte dos protocolos de neurofeedback objetivam suprimir padrões indesejáveis observados no EEG ou aumentar a expressão de padrões desejáveis, o que pode ser alcançado através de treinamento. A forma como os eletrodos são dispostos e os parâmetros de EEG avaliados variam, dependendo do objetivo da terapia.
           </p>
           <a href="#contato" className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
@@ -160,7 +160,7 @@ const Home = () => {
 </section>
 
 {/* Serviços auxiliares */}
-<section className="py-20 bg-gray-100 reveal rounded-lg overflow-hidden shadow-md">
+<section className="py-14 bg-gray-100 reveal rounded-lg overflow-hidden shadow-md">
   <div className="container mx-auto">
     <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Terapias auxiliares</h2>
     <p className="text-lg md:text-xl text-gray-600 mb-6 text-center">
@@ -181,13 +181,31 @@ const Home = () => {
             A laserterapia sistêmica, também conhecida como ILIB (Intravascular Laser Irradiation of Blood), é uma técnica terapêutica inovadora que utiliza a luz laser para irradiar o sangue, promovendo o bem-estar geral do organismo.
           </p>
           <p className="text-gray-600 mt-4">Durante a terapia, um laser de baixa intensidade é aplicado diretamente sobre um vaso sanguíneo. Isso desencadeia uma série de reações bioquímicas que promovem efeitos benéficos em todo o organismo.</p>
+          
+          {/* Benefícios da Laserterapia */}
           <ul className="text-gray-600 mt-4 space-y-2">
             <li>● Modulação do sistema imunológico;</li>
             <li>● Efeito analgésico e anti-inflamatório;</li>
             <li>● Aumento da oxigenação dos tecidos e da produção de ATP;</li>
             <li>● Redução do risco de trombose;</li>
             <li>● Efeito antioxidante;</li>
-          </ul>
+          </ul>   
+          
+          {/* TVNS (Estimulação do nervo vago transcutâneo) */}
+          <h3 className="text-xl font-bold text-blue-900 mt-6">TVNS (Estimulação do nervo vago transcutâneo)</h3>
+          <p className="text-gray-600 mt-4">
+            A estimulação do nervo vago transcutâneo (TVNS) é uma técnica inovadora e não invasiva que utiliza pequenos impulsos elétricos para estimular o nervo vago através da pele. Eletrodos são aplicados em pontos específicos da orelha ou do pescoço, próximos ao nervo vago. Ao receber estímulos elétricos de baixa intensidade, o nervo vago envia sinais ao cérebro, desencadeando uma série de reações que atuam na regulação do sistema nervoso autônomo, responsável por funções vitais do corpo, como o controle da pressão arterial, frequência cardíaca e respiração.
+          </p>
+          <ul className="text-gray-600 mt-4 space-y-2">
+            <li>● Modulação do Sistema Nervoso Autônomo;</li>
+            <li>● Redução de sintomas depressivos e ansiedade, ao regular os neurotransmissores como serotonina e dopamina;</li>
+            <li>● Melhora do sono, auxiliando na regulação dos ciclos de sono-vigília;</li>
+            <li>● Alívio da dor crônica, como a dor neuropática e a fibromialgia;</li>
+            <li>● Auxílio no tratamento de epilepsia e condições neurológicas;</li>
+            <li>● Melhora na saúde cardiovascular, contribuindo para a redução da pressão arterial e da frequência cardíaca.</li>
+          </ul> 
+          
+          {/* Botão Saiba Mais */}
           <a href="https://wa.me/+5515996293318?text=Olá! Gostaria de saber mais sobre a Laserterapia Sistêmica – ILIB." target="_blank" className="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
             Saiba Mais sobre Laserterapia
           </a>
@@ -245,7 +263,7 @@ const Home = () => {
 </section>
 
 {/* Serviços Section */}
-<section className="py-20 bg-gray-100 reveal rounded-lg">
+<section className="py-14 bg-gray-100 reveal rounded-lg">
   <div className="container mx-auto">
     <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Nossos Serviços</h2>
     <div className="flex flex-wrap justify-between p-6">
@@ -284,7 +302,7 @@ const Home = () => {
 </section>
 
 {/* O Que Meus Pacientes Dizem */}
-<section className="py-20 bg-white reveal">
+<section className="py-14 bg-white reveal">
   <div className="container mx-auto">
     <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">O Que Meus Pacientes Dizem:</h2>
     <p className="text-lg md:text-xl text-center text-gray-600 mb-10">
@@ -341,7 +359,7 @@ Também é uma pessoa amável com as crianças, fazendo-as confiar nela e em seu
 </section>
 
       {/* Treinamento Cognitivo - 3 Etapas */}
-      <section className="py-20 bg-white reveal">
+      <section className="py-14 bg-white reveal">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Etapas do Treinamento Cognitivo</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -384,32 +402,32 @@ Também é uma pessoa amável com as crianças, fazendo-as confiar nela e em seu
 </section>
 
 {/* Contato Section */}
-<section id="contato" className="py-20 bg-blue-900 text-white reveal">
+<section id="contato" className="py-10 bg-blue-900 text-white reveal">
   <div className="container mx-auto text-center">
-    <h2 className="text-3xl md:text-4xl font-bold mb-6">Entre em Contato</h2>
-    <p className="mb-6">Envie uma mensagem para nossa equipe e saiba mais sobre nossos tratamentos.</p>
+    <h2 className="text-2xl md:text-3xl font-bold mb-4">Entre em Contato</h2>
+    <p className="mb-4">Envie uma mensagem para nossa equipe e saiba mais sobre nossos tratamentos.</p>
     
     {/* Botão para WhatsApp */}
-    <a href="https://wa.me/15999999999?text=Olá! Gostaria de saber mais sobre os tratamentos."  target="_blank" className="bg-yellow-500 text-blue-900 px-6 py-3 rounded-md hover:bg-yellow-400 transition duration-300">
+    <a href="https://wa.me/+5515996293318?text=Olá! Gostaria de saber mais sobre os tratamentos."  target="_blank" className="bg-yellow-500 text-blue-900 px-6 py-2 rounded-md hover:bg-yellow-400 transition duration-300">
       Pedir Orçamento
     </a>
 
     {/* Redes Sociais */}
-    <div className="mt-6 flex justify-center space-x-4">
+    <div className="mt-4 flex justify-center space-x-4">
       {/* Instagram */}
       <a href="https://www.instagram.com/grasiele.vaz/" target="_blank" rel="noopener noreferrer">
         <img 
-          src="/assets/instagram.svg" 
+          src="/assets/instagramc.svg" 
           alt="Instagram" 
-          className="w-10 h-10" // Ajuste o tamanho conforme necessário
+          className="w-8 h-8" // Ajuste o tamanho conforme necessário
         />
       </a>
       {/* Facebook */}
       <a href="https://www.facebook.com/grasiele.vaz/" target="_blank" rel="noopener noreferrer">
         <img 
-          src="/assets/facebook.svg" 
+          src="/assets/facebookc.svg" 
           alt="Facebook" 
-          className="w-10 h-10" // Ajuste o tamanho conforme necessário
+          className="w-8 h-8" // Ajuste o tamanho conforme necessário
         />
       </a>
         {/* E-mail */}
@@ -417,7 +435,7 @@ Também é uma pessoa amável com as crianças, fazendo-as confiar nela e em seu
   <img 
     src="/assets/email.svg" 
     alt="E-mail" 
-    className="w-12 h-10" // Ajuste o tamanho conforme necessário
+    className="w-8 h-8" // Ajuste o tamanho conforme necessário
   />
 </a>
     </div>
