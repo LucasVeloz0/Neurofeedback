@@ -33,9 +33,12 @@ const Home = () => {
   <div className="container mx-auto flex flex-col md:flex-row justify-center  items-center">
     {/* Logo */}
     <div className="flex items-center space-x-4 mb-4 md:mb-0">
-      <img 
+      <Image 
         src="/assets/logo.png" 
-        alt="Logo Academia do Cérebro" 
+        alt="Logo" 
+        width={600}
+        height={150}
+  
         className="w-100 h-100" // Ajuste o tamanho conforme necessário
       />
     </div>
@@ -44,17 +47,21 @@ const Home = () => {
     <div className="flex space-x-4">
       {/* Instagram */}
       <a href="https://www.instagram.com/grasiele.vaz/" target="_blank" rel="noopener noreferrer">
-        <img 
+        <Image 
           src="/assets/instagram.svg" 
-          alt="Instagram" 
+          alt="Instagram"
+          width={32}
+          height={32} 
           className="w-6 h-6" // Ajuste o tamanho conforme necessário
         />
       </a>
       {/* Facebook */}
       <a href="https://www.facebook.com/grasiele.vaz/" target="_blank" rel="noopener noreferrer">
-        <img 
+        <Image 
           src="/assets/facebook.svg" 
           alt="Facebook" 
+          width={32}
+          height={32}
           className="w-6 h-6" // Ajuste o tamanho conforme necessário
         />
       </a>
@@ -129,9 +136,11 @@ const Home = () => {
       
       {/* Imagem Centralizada */}
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <img 
+        <Image 
           src="/assets/sobre.jpg" 
           alt="Sua Foto"
+          width={600}
+          height={600}
           className="w-40 h-40 rounded-full border-4 border-white shadow-lg"
         />
       </div>
@@ -172,7 +181,12 @@ const Home = () => {
       <div className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col">
         {/* Imagem Laserterapia */}
         <div className="w-full mb-6">
-          <img src="./assets/ilib.jpg" alt="Laserterapia ILIB" className="rounded-md w-full h-auto object-cover" />
+          <Image
+          src="./assets/ilib.jpg" 
+          alt="Laserterapia ILIB"
+          width={1200}
+          height={600}
+          className="rounded-md w-full h-auto object-cover" />
         </div>
         {/* Descrição Laserterapia */}
         <div className="w-full">
@@ -215,7 +229,11 @@ const Home = () => {
       {/* Serviço 2: Faixa de Fotobiomodulação */}
       <div className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col">
         <div className="w-full mb-6">
-          <img src="/assets/fotobio.jpg" alt="Faixa de Fotobiomodulação" className="rounded-md w-full h-auto object-cover" />
+          <Image src="/assets/fotobio.jpg" 
+          alt="Faixa de Fotobiomodulação" 
+          width={1200}
+          height={600}
+          className="rounded-md w-full h-auto object-cover" />
         </div>
         <div className="w-full">
           <h3 className="text-2xl font-bold text-blue-900 text-center">Faixa de Fotobiomodulação</h3>
@@ -312,9 +330,11 @@ const Home = () => {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Avaliação 1 */}
       <div className="bg-gray-50 p-6 rounded-lg shadow-md flex items-start">
-        <img
+        <Image
           src="/assets/paciente1.png"
           alt="Paciente 1"
+          width={16}
+          height={16}
           className="w-16 h-16 object-cover rounded-full mr-4" // Tamanho da foto
         />
         <div>
@@ -326,9 +346,11 @@ const Home = () => {
 
       {/* Avaliação 2 */}
       <div className="bg-gray-50 p-6 rounded-lg shadow-md flex items-start">
-        <img
+        <Image
           src="/assets/paciente2.png"
           alt="Paciente 2"
+          width={16}
+          height={16}
           className="w-16 h-16 object-cover rounded-full mr-4" // Tamanho da foto
         />
         <div>
@@ -343,9 +365,11 @@ Também é uma pessoa amável com as crianças, fazendo-as confiar nela e em seu
 
       {/* Avaliação 3 */}
       <div className="bg-gray-50 p-6 rounded-lg shadow-md flex items-start">
-        <img
+        <Image
           src="/assets/paciente3.png"
           alt="Paciente 3"
+          width={16}
+          height={16}
           className="w-16 h-16 object-cover rounded-full mr-4" // Tamanho da foto
         />
         <div>
@@ -416,25 +440,31 @@ Também é uma pessoa amável com as crianças, fazendo-as confiar nela e em seu
     <div className="mt-4 flex justify-center space-x-4">
       {/* Instagram */}
       <a href="https://www.instagram.com/grasiele.vaz/" target="_blank" rel="noopener noreferrer">
-        <img 
+        <Image 
           src="/assets/instagramc.svg" 
           alt="Instagram" 
+          width={8}
+          height={8}
           className="w-8 h-8" // Ajuste o tamanho conforme necessário
         />
       </a>
       {/* Facebook */}
       <a href="https://www.facebook.com/grasiele.vaz/" target="_blank" rel="noopener noreferrer">
-        <img 
+        <Image
           src="/assets/facebookc.svg" 
-          alt="Facebook" 
+          alt="Facebook"
+          width={8}
+          height={8} 
           className="w-8 h-8" // Ajuste o tamanho conforme necessário
         />
       </a>
         {/* E-mail */}
 <a href="mailto:grasielevaz22@gmail.com" target="_blank" rel="noopener noreferrer">
-  <img 
+  <Image 
     src="/assets/email.svg" 
     alt="E-mail" 
+    width={8}
+    height={8}
     className="w-8 h-8" // Ajuste o tamanho conforme necessário
   />
 </a>
