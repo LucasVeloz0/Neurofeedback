@@ -21,6 +21,24 @@ const Home = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    let socket: WebSocket | null = null as WebSocket | null;
+
+    const handlePageHide = () => {
+      // Fechar conexões WebSocket ou Server-Sent Events
+      if (socket) {
+        socket.close();
+      }
+    };
+
+    window.addEventListener('pagehide', handlePageHide);
+
+    return () => {
+      window.removeEventListener('pagehide', handlePageHide);
+    };
+  }, []);
+
   return (
     <div>
       <Head>
@@ -38,6 +56,7 @@ const Home = () => {
         alt="Logo" 
         width={600}
         height={150}
+        priority // Carregar a imagem com prioridade
   
         className="w-100 h-100" // Ajuste o tamanho conforme necessário
       />
@@ -72,7 +91,7 @@ const Home = () => {
 
       {/* Home Section */}
       <section className="bg-gray-100 py-20">
-  <div className="container mx-auto text-center px-4">
+  <div className="container mx-auto text-center px-6">
     <h1 className="text-2xl md:text-5xl font-bold text-blue-900 mb-4">Treine Seu Cérebro e Melhore Sua Vida com Neurofeedback</h1>
     <p className="text-lg md:text-xl text-gray-600 mb-6">
       Benefícios do Neurofeedback:
@@ -91,36 +110,35 @@ const Home = () => {
 </section>
 
 {/* Banner responsivo centralizado */}
-      <section className="relative flex justify-center items-center bg-white py-10 reveal">
-        <div className="w-full max-w-7xl mx-auto">
-          <Image
-            src="/assets/banner.jpg"
-            alt="Banner Neurofeedback"
-            layout="responsive"
-            width={1200}
-            height={600}
-            className="rounded-lg"
-          />
-        </div>
-      </section>
+<section className="relative flex justify-center items-center bg-white py-10 reveal">
+  <div className="w-full max-w-7xl mx-auto relative">
+    <Image
+      src="/assets/banner.jpg"
+      alt="Banner Neurofeedback"
+      width={1200}  // Define a largura da imagem
+      height={600}  // Define a altura da imagem
+      className="rounded-lg object-cover"  // Adiciona bordas arredondadas e controle de como a imagem se comporta
+    />
+  </div>
+</section>
 
 
       {/* O que é Neurofeedback Section */}
       <section className="bg-white py-14 reveal">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6 text-center">O que é Neurofeedback?</h2>
-          <p className="text-left text-lg md:text-xl text-gray-600  p-6">
+          <p className="text-left text-justify text-lg md:text-xl text-gray-600  p-6">
           O neurofeedback é uma modalidade terapêutica que utiliza como estratégia a auto-regulação de padrões de atividade cerebral. A atividade cerebral é observada através de parâmetros do eletroencefalograma (EEG), obtido com a disposição de eletrodos em certos pontos da cabeça do paciente. Esses parâmetros são então apresentados ao paciente através de estímulos visuais, auditivos ou tácteis de forma que o paciente voluntariamente altere esses parâmetros em direção a um padrão desejado.
           </p>
-          <p className="text-left text-lg md:text-xl text-gray-600 mb-10 p-4">
+          <p className="text-left text-justify text-lg md:text-xl text-gray-600 mb-10 p-6">
           Essa terapia se baseia no princípio de neuroplasticidade cerebral e na capacidade de exames como EEG de registrarem a atividade do cérebro. Boa parte dos protocolos de neurofeedback objetivam suprimir padrões indesejáveis observados no EEG ou aumentar a expressão de padrões desejáveis, o que pode ser alcançado através de treinamento. A forma como os eletrodos são dispostos e os parâmetros de EEG avaliados variam, dependendo do objetivo da terapia.
           </p>
-          <a href="#contato" className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
+          <a href="#contato" className="bg-blue-900 text-white text-justify px-6 py-3 rounded-md hover:bg-blue-800 transition duration-300">
       Saiba Mais
     </a>
           
           <h2 className='text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10 py-10' >Agende uma Sessão e Comece a Transformar sua Vida</h2>
-          <p className='text-lg md:text-xl text-gray-600 mb-6' >Nosso tratamento personalizado começa com um mapeamento cerebral completo para criar um protocolo exclusivo para suas necessidades. Entre em contato agora para agendar sua primeira sessão!</p>
+          <p className='text-lg md:text-xl text-justify text-gray-600 mb-6 px-6 sm:px-6 lg:px-8' >Nosso tratamento personalizado começa com um mapeamento cerebral completo para criar um protocolo exclusivo para suas necessidades. Entre em contato agora para agendar sua primeira sessão!</p>
           
         </div>
       </section>
@@ -131,7 +149,7 @@ const Home = () => {
   <div className="h-20 bg-white"></div>
   
   {/* Parte inferior com fundo verde (80%) */}
-  <div className="bg-green-600 h-100 p-8 relative rounded-lg mx-4 lg:mx-24">
+  <div className="bg-green-600 h-100 px-2 relative rounded-lg mx-4 lg:mx-24">
     <div className="container mx-auto text-center px-4">
       
       {/* Imagem Centralizada */}
@@ -148,7 +166,7 @@ const Home = () => {
       {/* Conteúdo da Seção */}
       <div className="pt-20 reveal">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Sobre Mim</h2>
-        <p className="text-lg md:text-xl text-white max-w-4xl mx-auto mb-4">
+        <p className="text-lg md:text-xl text-justify text-white max-w-4xl mx-auto mb-4">
         Sou psicanalista clínica, atuo com especialização infantil, aplicadora ABA, TCC, Hipnose clínica, e atualmente trouxe para o consultório uma técnica muito inovadora do Neurofeedback, neuromodulação para diversas áreas, principalmente transtorno neurológico, autismo, TDAH, Tod, bipolaridade, depressão, vícios e manias, entre muitas áreas que posso contribuir para tratamento dos pacientes em sofrimento.
         </p>
         <p className="text-lg md:text-xl text-white max-w-3xl mx-auto text-left">
@@ -172,7 +190,7 @@ const Home = () => {
 <section className="py-14 bg-gray-100 reveal rounded-lg overflow-hidden shadow-md">
   <div className="container mx-auto">
     <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">Terapias auxiliares</h2>
-    <p className="text-lg md:text-xl text-gray-600 mb-6 text-center">
+    <p className="text-lg md:text-xl text-justify text-gray-600 mb-6 px-6 sm:px-6 lg:px-8">
       Para melhorar seus resultados além do Neurofeedback, oferecemos tratamentos complementares que podem potencializar seus resultados:
     </p>
 
@@ -191,10 +209,10 @@ const Home = () => {
         {/* Descrição Laserterapia */}
         <div className="w-full">
           <h3 className="text-2xl font-bold text-blue-900 text-center">Laserterapia Sistêmica – ILIB</h3>
-          <p className="text-gray-600 mt-4">
+          <p className="text-gray-600 text-justify mt-4">
             A laserterapia sistêmica, também conhecida como ILIB (Intravascular Laser Irradiation of Blood), é uma técnica terapêutica inovadora que utiliza a luz laser para irradiar o sangue, promovendo o bem-estar geral do organismo.
           </p>
-          <p className="text-gray-600 mt-4">Durante a terapia, um laser de baixa intensidade é aplicado diretamente sobre um vaso sanguíneo. Isso desencadeia uma série de reações bioquímicas que promovem efeitos benéficos em todo o organismo.</p>
+          <p className="text-gray-600 text-justify mt-4">Durante a terapia, um laser de baixa intensidade é aplicado diretamente sobre um vaso sanguíneo. Isso desencadeia uma série de reações bioquímicas que promovem efeitos benéficos em todo o organismo.</p>
           
           {/* Benefícios da Laserterapia */}
           <ul className="text-gray-600 mt-4 space-y-2">
@@ -206,8 +224,8 @@ const Home = () => {
           </ul>   
           
           {/* TVNS (Estimulação do nervo vago transcutâneo) */}
-          <h3 className="text-xl font-bold text-blue-900 mt-6">TVNS (Estimulação do nervo vago transcutâneo)</h3>
-          <p className="text-gray-600 mt-4">
+          <h3 className="text-xl  font-bold text-blue-900 mt-6">TVNS (Estimulação do nervo vago transcutâneo)</h3>
+          <p className="text-gray-600 text-justify mt-4">
             A estimulação do nervo vago transcutâneo (TVNS) é uma técnica inovadora e não invasiva que utiliza pequenos impulsos elétricos para estimular o nervo vago através da pele. Eletrodos são aplicados em pontos específicos da orelha ou do pescoço, próximos ao nervo vago. Ao receber estímulos elétricos de baixa intensidade, o nervo vago envia sinais ao cérebro, desencadeando uma série de reações que atuam na regulação do sistema nervoso autônomo, responsável por funções vitais do corpo, como o controle da pressão arterial, frequência cardíaca e respiração.
           </p>
           <ul className="text-gray-600 mt-4 space-y-2">
@@ -237,7 +255,7 @@ const Home = () => {
         </div>
         <div className="w-full">
           <h3 className="text-2xl font-bold text-blue-900 text-center">Faixa de Fotobiomodulação</h3>
-          <p className="text-gray-600 mt-4">
+          <p className="text-gray-600 text-justify mt-4">
             A faixa de fotobiomodulação intracraniana é um dispositivo inovador que utiliza luz de baixa intensidade para estimular o cérebro de forma não invasiva, promovendo melhorias em diversas funções cerebrais.
           </p>
           <ul className="text-gray-600 mt-4 space-y-2">
@@ -255,13 +273,21 @@ const Home = () => {
 
       {/* Serviço 3: Estimulação Transcraniana por Corrente Contínua (tDCS) */}
       <div className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col">
+
+        <div className="w-full mb-6">
+          <Image src="/assets/transcraniana.jpeg" 
+          alt="Faixa de Fotobiomodulação" 
+          width={1200}
+          height={600}
+          className="rounded-md w-full h-auto object-cover" />
+        </div>
         {/* Descrição tDCS */}
         <div className="w-full">
           <h3 className="text-2xl font-bold text-blue-900 text-center">Estimulação Transcraniana por Corrente Contínua (tDCS)</h3>
-          <p className="text-gray-600 mt-4">
+          <p className="text-gray-600 text-justify mt-4">
             A Estimulação Transcraniana por Corrente Contínua (tDCS) é uma técnica não invasiva de neuromodulação que utiliza correntes elétricas de baixa intensidade para estimular regiões específicas do cérebro. Cada vez mais reconhecida no campo da neurociência e da saúde mental, a tDCS oferece uma abordagem inovadora para o tratamento de diversas condições neurológicas e psicológicas, além de potencializar funções cognitivas.
           </p>
-          <p className="text-gray-600 mt-4">
+          <p className="text-gray-600 text-justify mt-4">
             Durante a aplicação, eletrodos são colocados na superfície do couro cabeludo, permitindo a passagem de uma corrente contínua que altera a excitabilidade neuronal. Essa modulação elétrica pode aumentar ou diminuir a atividade das células nervosas, influenciando processos cognitivos e emocionais.
           </p>
           <ul className="text-gray-600 mt-4 space-y-2">
@@ -322,7 +348,7 @@ const Home = () => {
 {/* O Que Meus Pacientes Dizem */}
 <section className="py-14 bg-white reveal">
   <div className="container mx-auto">
-    <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10">O Que Meus Pacientes Dizem:</h2>
+    <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-10 sm:px-6">O Que Meus Pacientes Dizem:</h2>
     <p className="text-lg md:text-xl text-center text-gray-600 mb-10">
       Veja as avaliações de pacientes satisfeitos com nossos serviços.
     </p>
@@ -339,7 +365,7 @@ const Home = () => {
         />
         <div>
           <h4 className="font-bold text-blue-900">Tatiana Wergennes</h4>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 text-justify mt-2">
           Experiência muito satisfatória, com certeza vale muito a pena ter a orientação de alguém que tem propriedade e conhecimento na área. A Dra Grasiele Vaz meu agradecimento pela dedicação com meu filho 🙏          </p>
         </div>
       </div>
@@ -355,7 +381,7 @@ const Home = () => {
         />
         <div>
           <h4 className="font-bold text-blue-900">Francine Michelin</h4>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 text-justify mt-2">
           Uma profissional excepcional!
 Atenciosa, tem muita propriedade e conhecimento na área e pronta para ajudar.
 Na entrevista com os pais foi muito solicita, demonstrou conhecimento profundo sobre nossa queixa que até parecia estar descrevendo nosso filho sem ao menos conhecê-lo.
@@ -374,7 +400,7 @@ Também é uma pessoa amável com as crianças, fazendo-as confiar nela e em seu
         />
         <div>
           <h4 className="font-bold text-blue-900">Priscila Marins</h4>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 text-justify mt-2">
           Uma excelente profissional, mostrou profundo conhecimento no que faz, além de bastante atenciosa. Recomendo com empenho ⭐️          </p>
         </div>
       </div>
@@ -408,19 +434,45 @@ Também é uma pessoa amável com as crianças, fazendo-as confiar nela e em seu
   <div className="container mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-10">Localização</h2>
     <p className="text-lg md:text-xl text-gray-600 mb-6">
-      Veja a localização da nossa clínica no mapa abaixo:
+      Veja as localizações de nossas clínicas nos mapas abaixo:
     </p>
-    
-    <div className="flex justify-center">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3658.3630385973415!2d-47.4431076!3d-23.5194416!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c58b0537bf16fb%3A0x8bbb30cf612851b!2sAcademia%20do%20c%C3%A9rebro-Grasiele%20Vaz%20Psicanalista%20%2F%20Neurofeedback!5e0!3m2!1spt-BR!2sbr!4v1729208570692!5m2!1spt-BR!2sbr" 
-        width="100%" 
-        height="450" 
-        style={{ border: 0 }} 
-        allowFullScreen 
-        loading="lazy" 
-        referrerPolicy="no-referrer-when-downgrade">
-      </iframe>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Primeiro mapa */}
+      <div>
+        <div className="flex justify-center">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3658.3630385973415!2d-47.4431076!3d-23.5194416!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c58b0537bf16fb%3A0x8bbb30cf612851b!2sAcademia%20do%20c%C3%A9rebro-Grasiele%20Vaz%20Psicanalista%20%2F%20Neurofeedback!5e0!3m2!1spt-BR!2sbr!4v1729208570692!5m2!1spt-BR!2sbr"
+            width="100%"
+            height="250"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <p className="text-sm md:text-base text-gray-700 mt-4">
+          <strong>Endereço:</strong> Av. Paraguai, 999 - Vila Barcelona, Sorocaba, SP - CEP 18060-260
+        </p>
+      </div>
+
+      {/* Segundo mapa */}
+      <div>
+        <div className="flex justify-center">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.5237645345137!2d-47.46384732434683!3d-23.513657078832637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c58a902b69de65%3A0x3b2e03c062f34f8e!2sAv.%20Washington%20Luiz%2C%20573%20-%20Jardim%20Emilia%2C%20Sorocaba%20-%20SP%2C%2018031-000!5e0!3m2!1spt-BR!2sbr!4v1737768967014!5m2!1spt-BR!2sbr"
+            width="100%"
+            height="250"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <p className="text-sm md:text-base text-gray-700 mt-4">
+          <strong>Endereço:</strong> Av. Washington Luiz, 573 - Jardim Emília, Sorocaba, SP - CEP 18031-000
+        </p>
+      </div>
     </div>
   </div>
 </section>
