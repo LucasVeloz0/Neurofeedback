@@ -434,45 +434,26 @@ Também é uma pessoa amável com as crianças, fazendo-as confiar nela e em seu
   <div className="container mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-10">Localização</h2>
     <p className="text-lg md:text-xl text-gray-600 mb-6">
-      Veja as localizações de nossas clínicas nos mapas abaixo:
+      Veja a localização da nossa clínica no mapa abaixo:
     </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid  gap-6 content-center">
       {/* Primeiro mapa */}
-      <div>
+      <div className='max-w-xl mx-auto'>
         <div className="flex justify-center">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3658.3630385973415!2d-47.4431076!3d-23.5194416!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c58b0537bf16fb%3A0x8bbb30cf612851b!2sAcademia%20do%20c%C3%A9rebro-Grasiele%20Vaz%20Psicanalista%20%2F%20Neurofeedback!5e0!3m2!1spt-BR!2sbr!4v1729208570692!5m2!1spt-BR!2sbr"
-            width="100%"
-            height="250"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+           <iframe
+           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.373018054462!2d-47.471144288277735!3d-23.51908247874065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c58a8cd494f453%3A0xef7d54cfa5415917!2sR.%20Texas%2C%20274%20-%20Jardim%20America%2C%20Sorocaba%20-%20SP%2C%2018046-740!5e0!3m2!1spt-BR!2sbr!4v1763326658248!5m2!1spt-BR!2sbr"
+           className="w-full h-[250px] rounded-lg"
+           style={{ border: 0 }}
+           allowFullScreen
+           loading="lazy"
+           referrerPolicy="no-referrer-when-downgrade"
+  />
         </div>
         <p className="text-sm md:text-base text-gray-700 mt-4">
-          <strong>Endereço:</strong> Av. Paraguai, 999 - Vila Barcelona, Sorocaba, SP - CEP 18060-260
+          <strong>Endereço:</strong> R. Texas, 274 - Jardim America, Sorocaba - SP, 18046-740
         </p>
-      </div>
-
-      {/* Segundo mapa */}
-      <div>
-        <div className="flex justify-center">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.5237645345137!2d-47.46384732434683!3d-23.513657078832637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c58a902b69de65%3A0x3b2e03c062f34f8e!2sAv.%20Washington%20Luiz%2C%20573%20-%20Jardim%20Emilia%2C%20Sorocaba%20-%20SP%2C%2018031-000!5e0!3m2!1spt-BR!2sbr!4v1737768967014!5m2!1spt-BR!2sbr"
-            width="100%"
-            height="250"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <p className="text-sm md:text-base text-gray-700 mt-4">
-          <strong>Endereço:</strong> Av. Washington Luiz, 573 - Jardim Emília, Sorocaba, SP - CEP 18031-000
-        </p>
-      </div>
+      </div>    
     </div>
   </div>
 </section>
